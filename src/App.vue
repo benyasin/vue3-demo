@@ -10,6 +10,9 @@
             <div>
                 <router-link to="/counter"> Counter</router-link>
             </div>
+            <div>
+                <router-link to="/todomvc"> TodoMVC</router-link>
+            </div>
         </div>
         <div id="content">
             <router-view/>

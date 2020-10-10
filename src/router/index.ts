@@ -12,6 +12,11 @@ const routes: Array<any> = [
         name: "Counter",
         component: () => import("../views/Counter.vue"),
     },
+    {
+        path: "/todomvc",
+        name: "TodoMVC",
+        component: () => import("../views/TodoMVC.vue"),
+    },
 ];
 
 const router = createRouter({
