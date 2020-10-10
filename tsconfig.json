@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  },
+  "baseUrl": ".",
+  "paths": {
+    "/@/": ["src/*"],
+    "/@views/": ["src/views/*"],
+    "/@components/": ["src/components/*"]
+  }
+}
