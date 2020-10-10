@@ -5,7 +5,10 @@
                 <b>🚀 [vue3, vite, ts]</b>
             </div>
             <div>
-                <router-link to="/"> Home </router-link>
+                <router-link to="/"> Home</router-link>
+            </div>
+            <div>
+                <router-link to="/counter"> Counter</router-link>
             </div>
         </div>
         <div id="content">

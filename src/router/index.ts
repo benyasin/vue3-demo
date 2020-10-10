@@ -6,7 +6,12 @@ const routes: Array<any> = [
         path: "/",
         name: "Home",
         component: Home,
-    }
+    },
+    {
+        path: "/counter",
+        name: "Counter",
+        component: () => import("../views/Counter.vue"),
+    },
 ];
 
 const router = createRouter({

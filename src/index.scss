@@ -26,13 +26,8 @@ body {
   .view {
     position: relative;
     min-height: 100vh;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    // font-family: Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     display: flex;
     // color: #2c3e50;
-
 
     #nav {
       position: fixed;
@@ -58,7 +53,8 @@ body {
         color: #92abcf;
         text-decoration: none;
         cursor: pointer;
-        padding-left: 30px;
+        padding-left: 20px;
+        text-align: left;
 
         &:hover {
           color: #11ece5;
@@ -73,7 +69,6 @@ body {
     #content {
       position: relative;
       min-height: 100vh;
-      padding: 20px;
       width: 100%;
       padding-left: 230px;
     }
