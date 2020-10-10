@@ -4,19 +4,30 @@
     <div class="counter">原值: <span class="red">{{count}}</span></div>
     <div class="counter">原值的10倍: <span class="red">{{count10}}</span></div>
 
-    <button class="btn-add" @click="countAdd">{{btnText}}</button>
+    <div>
+        <button class="btn-add" @click="countAdd">{{btnText}}</button>
+    </div>
+
+    <div>
+        <MyButton :text="compText" :disabled="disabled" @onClick="countAdd"></MyButton>
+    </div>
 </template>
 
 <script lang="ts">
     import {ref, computed} from 'vue'
+    import MyButton from '/@components/MyButton.vue'
 
     export default {
+        components: {MyButton},
         setup() {
             const count = ref(0)
+            const disabled = ref(false)
             const btnText = ref("点击增加count值")
+            const compText = ref("父子组件交互通信")
 
             const countAdd = () => {
                 count.value++;
+                disabled.value = [true, false][count.value % 2]
             }
 
             const count10 = computed(() => {
@@ -25,8 +36,10 @@
 
             return {
                 count,
+                disabled,
                 count10,
                 btnText,
+                compText,
                 countAdd
             }
         }
