@@ -6,12 +6,7 @@ const routes: Array<any> = [
         path: "/",
         name: "Home",
         component: Home,
-    },
-    {
-        path: "/hello",
-        name: "Hello",
-        component:  import(/* webpackChunkName: "vueinfo" */ "../views/Home.vue"),
-    },
+    }
 ];
 
 const router = createRouter({
