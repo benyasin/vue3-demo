@@ -60,7 +60,6 @@
     import {
         defineComponent,
         ref,
-        reactive,
         computed,
         onMounted,
         onUnmounted,
@@ -106,6 +105,9 @@
             const filteredTodoList = computed(() => store.getters.filteredTodoList[visibility.value]())
 
             function addTodo() {
+                if (!newTodoTitle.value) {
+                    return
+                }
                 store.commit('createTodo', {
                     id: id.value,
                     title: newTodoTitle.value,
@@ -182,8 +184,6 @@
 
 <style lang="scss">
     .box {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
         background: #fff;
         position: relative;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
@@ -201,24 +201,17 @@
         }
 
         h1 {
-            width: 100%;
             padding: 20px;
-            margin: 0;
             color: #b83f45;
-            -webkit-text-rendering: optimizeLegibility;
-            -moz-text-rendering: optimizeLegibility;
-            text-rendering: optimizeLegibility;
         }
 
         .header {
             .new-todo {
                 font-style: italic;
                 width: 100%;
-                font-size: 24px;
-                line-height: 1.4em;
+                font-size: 22px;
                 padding: 16px 16px 16px 60px;
                 border: none;
-                background: rgba(0, 0, 0, 0.003);
                 box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
             }
         }
@@ -230,7 +223,7 @@
 
             li {
                 position: relative;
-                font-size: 24px;
+                font-size: 22px;
                 border-bottom: 1px solid #ededed;
 
                 .todo-view {
@@ -240,9 +233,6 @@
                         word-break: break-all;
                         padding: 15px 15px 15px 60px;
                         display: block;
-                        line-height: 1.2;
-                        transition: color 0.4s;
-                        font-weight: 400;
                         color: #4d4d4d;
                     }
 
@@ -253,7 +243,6 @@
                         position: absolute;
                         top: 0;
                         bottom: 0;
-                        margin: auto 0;
                         border: none; /* Mobile Safari */
                         -webkit-appearance: none;
                         appearance: none;
@@ -288,8 +277,6 @@
                         border: 1px solid #999;
                         box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
                         box-sizing: border-box;
-                        -webkit-font-smoothing: antialiased;
-                        -moz-osx-font-smoothing: grayscale;
                     }
 
                     .todo-view {
@@ -342,8 +329,6 @@
 
         .footer {
             height: 50px;
-            text-align: center;
-            font-size: 15px;
             border-top: 1px solid #e6e6e6;
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6,
             0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6,
@@ -352,6 +337,7 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            padding-right: 50px;
 
             .todo-count {
                 height: 100%;
@@ -418,13 +404,7 @@
             }
 
             .clear-completed {
-                line-height: 20px;
-                text-decoration: none;
                 cursor: pointer;
-
-                &:hover {
-                    text-decoration: underline;
-                }
             }
         }
     }
