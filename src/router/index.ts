@@ -68,6 +68,21 @@ const routes: Array<any> = [
         component: () => import("../views/composition/Event.vue"),
     },
     {
+        path: "/other/fragment",
+        name: "Fragment",
+        component: () => import("../views/other/Fragment.vue"),
+    },
+    {
+        path: "/other/teleport",
+        name: "Teleport",
+        component: () => import("../views/other/Teleport.vue"),
+    },
+    {
+        path: "/other/suspense",
+        name: "Suspense",
+        component: () => import("../views/other/Suspense.vue"),
+    },
+    {
         path: "/counter",
         name: "Counter",
         component: () => import("../views/Counter.vue"),

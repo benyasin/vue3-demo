@@ -28,6 +28,14 @@
                     <li><router-link to="/composition/event">Event</router-link></li>
                 </ul>
             </div>
+            <div class="group">
+                <div>其它特性</div>
+                <ul>
+                    <li><router-link to="/other/setup">Fragment</router-link></li>
+                    <li><router-link to="/other/teleport">Teleport</router-link></li>
+                    <li><router-link to="/other/suspense">Suspense</router-link></li>
+                </ul>
+            </div>
             <div>
                 <router-link to="/counter"> Counter</router-link>
             </div>
