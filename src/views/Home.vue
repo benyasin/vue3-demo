@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <HelloWorld msg="Welcome to vue3-ts App"/>
+        <HelloWorld msg="Welcome to vue3 App"/>
     </div>
 </template>
 

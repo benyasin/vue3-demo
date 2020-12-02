@@ -31,20 +31,29 @@ body {
 
     #nav {
       position: fixed;
+      width: 200px;
       top: 0;
       left: 0;
       bottom: 0;
       background-color: #487ab5;
-      padding: 24px 12px 12px;
+      padding: 24px;
       flex: 0 0 auto;
       height: 100vh;
       z-index: 99;
 
-      div {
+      > div {
         display: flex;
-        height: 46px;
-        line-height: 46px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
         color: #92abcf;
+        padding: 10px 0;
+
+        ul{
+          li{
+            text-align: left;
+          }
+        }
       }
 
       a {
@@ -53,7 +62,6 @@ body {
         color: #92abcf;
         text-decoration: none;
         cursor: pointer;
-        padding-left: 20px;
         text-align: left;
 
         &:hover {

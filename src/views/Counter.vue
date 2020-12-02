@@ -20,6 +20,7 @@
     export default {
         components: {MyButton},
         setup() {
+
             const count = ref(0)
             const disabled = ref(false)
             const btnText = ref("点击增加count值")
@@ -44,7 +45,6 @@
             }
         }
     }
-
 </script>
 <style lang="scss">
     .title {
