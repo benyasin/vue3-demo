@@ -31,7 +31,7 @@
             <div class="group">
                 <div>其它特性</div>
                 <ul>
-                    <li><router-link to="/other/setup">Fragment</router-link></li>
+                    <li><router-link to="/other/fragment">Fragment</router-link></li>
                     <li><router-link to="/other/teleport">Teleport</router-link></li>
                     <li><router-link to="/other/suspense">Suspense</router-link></li>
                 </ul>

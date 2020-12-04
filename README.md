@@ -1,6 +1,6 @@
 # vue3-demo
 
-##### vue3入门教程
+vue3入门教程
 
 包含`HelloWorld`、`响应式API`、`组合式API`、`其它特性`、`Counter` 以及 `TodoMVC`，
 同时集成 `vuex4`、`vue-router4`、`typescript`和`vitejs`。
