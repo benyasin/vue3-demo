@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    import AsyncComponent from './AsyncComponent.vue'
+    import AsyncComponent from '/@components/AsyncComponent.vue'
     export default {
         components:{
             AsyncComponent
