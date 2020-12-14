@@ -7,7 +7,6 @@
         <li>4.实例event bus的方法推荐引入外部事件库，如 <a href="https://github.com/developit/mitt">mitt</a> or <a href="https://github.com/scottcorgan/tiny-emitter">tiny-emitter</a> </li>
     </ul>
 
-
     <custom-event @myEvent="handleMyEvent" @myEvent2="handleMyEvent2"/>
 </template>
 
