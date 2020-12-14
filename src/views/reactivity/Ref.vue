@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-    import {isRef, ref, unref, toRef, toRefs, reactive, shallowRef, shallowReactive, isReactive} from '@vue/reactivity'
+    import {isRef, ref, unref, toRef, toRefs, reactive, shallowRef} from '@vue/reactivity'
     import {watchEffect} from '@vue/runtime-core'
 
     export default {
