@@ -1,5 +1,14 @@
 <template>
-    ref
+    <h2> Ref </h2>
+    <ul style="text-align: left; padding-left: 300px">
+        <li>1.接受一个参数值并返回一个响应式且可改变的 ref 对象。ref 对象拥有一个指向内部值的单一属性 .value。</li>
+        <li>2.ref 是 reactive 的一个变形版本，reactive 只接受对象作为入参，ref 解决值类型的数据响应，如果传入 ref 的是一个对象，内部会调 reactive。</li>
+        <li>3.isRef 用来判断某个值是否为 ref() 创建出来的对象。</li>
+        <li>4.unref 返回 ref 代理的原始对象，这是一个转义接口。</li>
+        <li>5.shallowRef 只代理 ref 对象本身，也就是说只有 .value 是被代理的，而 .value 所引用的对象并没有被代理。</li>
+        <li>6.toRef() 函数用来把一个响应式对象的的某个 key 值转换成 ref。</li>
+        <li>6.toRefs() 函数直接把一个响应式对象的所有key都转成 ref。</li>
+    </ul>
 </template>
 
 <script lang="ts">
@@ -26,6 +35,44 @@
 
             // 如果参数为 ref，则返回内部值，否则返回参数本身。这是 val = isRef(val) ? val.value : val
             console.log(unref(count))
+
+
+            // shallowRef用在值对象上
+            setTimeout(()=>{
+                const refState = ref(0)
+                const shallowRefState = shallowRef(0)
+
+                watchEffect(() => {
+                    console.log('监听ref对象 refState.value:' + refState.value)
+                })
+
+                watchEffect(() => {
+                    console.log('监听shallowRef对象 shallowState.value:' + shallowRefState.value)
+                })
+
+                refState.value++
+                shallowRefState.value++
+            },500)
+
+
+            // shallowRef用在引用对象上
+            setTimeout(()=>{
+                console.log('-----------------')
+                const refState2 = ref({foo:1})
+                const shallowRefState2 = shallowRef({foo:1})
+
+                watchEffect(() => {
+                    console.log('监听ref对象 refState2.value.foo:' + refState2.value.foo)
+                })
+
+                watchEffect(() => {
+                    console.log('监听shallowRef对象 shallowState2.value.foo:' + shallowRefState2.value.foo)
+                })
+
+                refState2.value.foo++
+                shallowRefState2.value.foo++
+            },1000)
+
 
 
             // toRef 可以用来为源响应式对象上的 property 性创建一个 ref。然后可以将 ref 传递出去，从而保持对其源 property 的响应式连接。
@@ -67,25 +114,6 @@
             stateAsRefs.bar.value++
             console.log(state2.bar) // 3
 
-
-            // shallowRef
-            const refState = ref({
-                foo: 1
-            })
-            const shallowRefState = shallowRef({
-                foo: 1
-            })
-
-            watchEffect(() => {
-                console.log('监听reactive对象shallowState.foo:' + refState.value.foo)
-            })
-
-            watchEffect(() => {
-                console.log('监听reactive对象shallowState.nested.bar:' + shallowRefState.value.foo)
-            })
-
-            refState.value.foo++
-            shallowRefState.value.foo++
         }
     };
 </script>
