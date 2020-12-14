@@ -1,5 +1,10 @@
 <template>
-    computed
+    <h2> Computed </h2>
+    <ul style="text-align: left; padding-left: 300px">
+        <li>1.computed 就是一个 lazy 的 effect。</li>
+        <li>2.使用 getter 函数，并为从 getter 返回的值返回一个不变的响应式 ref 对象。</li>
+        <li>3.可以使用具有 get 和 set 函数的对象来创建可写的 ref 对象。</li>
+    </ul>
 </template>
 
 <script lang="ts">

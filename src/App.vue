@@ -14,8 +14,8 @@
                     <li><router-link to="/reactivity/reactive">Reactive</router-link></li>
                     <li><router-link to="/reactivity/computed">Computed</router-link></li>
                     <li><router-link to="/reactivity/effect">Effect</router-link></li>
-                    <li><router-link to="/reactivity/watch">Watch</router-link></li>
                     <li><router-link to="/reactivity/watchEffect">WatchEffect</router-link></li>
+                    <li><router-link to="/reactivity/watch">Watch</router-link></li>
                 </ul>
             </div>
             <div class="group">
